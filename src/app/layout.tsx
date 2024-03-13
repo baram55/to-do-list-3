@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="ko">
       <body className={inter.className}>
         <nav>
-          <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/report">Report</Link>
           <Link href="/todos-csr">Todos-csr</Link>
