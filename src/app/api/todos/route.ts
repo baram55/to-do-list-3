@@ -4,11 +4,12 @@ export const GET = async () => {
   });
   const todos = await response.json();
 
-  if (!todos) {
-    return new Response("todos not found", { status: 404 });
-  }
+  // if (!todos) {
+  //   return new Response("todos not found", { status: 404 });
+  // }
 
-  return Response.json(todos);
+  //return Response.json(todos);
+  return todos;
 };
 
 export const POST = async (request: Request) => {
