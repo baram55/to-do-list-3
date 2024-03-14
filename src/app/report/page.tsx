@@ -9,15 +9,18 @@ const GET = async () => {
   });
   const todos = await response.json();
 
+  if (!todos) {
+    return "todos를 불러오는데 실패했습니다.";
+  }
   return todos;
 };
 
 const Report = async () => {
-  const todos = await GET();
+  const todos: Todo[] | string = await GET();
   let totalCount = 0;
   let doneCount = 0;
 
-  if (!todos) {
+  if (typeof todos === "string") {
     return <p>todos를 불러오는데 실패했습니다.</p>;
   } else {
     todos.forEach((todo: Todo) => {

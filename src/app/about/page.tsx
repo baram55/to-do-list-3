@@ -8,17 +8,17 @@ async function GET() {
   const companyInfo = await response.json();
 
   if (!companyInfo) {
-    return null;
+    return "회사 정보를 불러오는데 실패했습니다.";
   }
 
   return companyInfo;
 }
 
 const About = async () => {
-  const companyInfo: CompanyInfo = await GET();
+  const companyInfo: CompanyInfo | string = await GET();
 
-  if (!companyInfo) {
-    return <p>회사 정보를 불러오는데 실패했습니다.</p>;
+  if (typeof companyInfo == "string") {
+    return <p>{companyInfo}</p>;
   } else {
     return (
       <main>
