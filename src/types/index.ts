@@ -9,3 +9,8 @@ export type Todo = {
   contents: string;
   isDone: false;
 };
+
+export type NewTodo = {
+  title: string;
+  contents: string;
+};

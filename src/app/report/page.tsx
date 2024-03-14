@@ -21,7 +21,7 @@ const Report = async () => {
   let doneCount = 0;
 
   if (typeof todos === "string") {
-    return <p>todos를 불러오는데 실패했습니다.</p>;
+    return <p>{todos}</p>;
   } else {
     todos.forEach((todo: Todo) => {
       if (todo.isDone) {
@@ -31,10 +31,10 @@ const Report = async () => {
     });
 
     return (
-      <main>
-        <h1>통계</h1>
-        <p>총 todo 갯수 : {totalCount}</p>
-        <p>완료한 todo 갯수 : {doneCount}</p>
+      <main className="m-4">
+        <h1 className="my-1">통계</h1>
+        <p className="my-1">총 todo 갯수 : {totalCount}</p>
+        <p className="my-1">완료한 todo 갯수 : {doneCount}</p>
       </main>
     );
   }

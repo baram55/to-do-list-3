@@ -20,10 +20,18 @@ export default function RootLayout({
     <html lang="ko">
       <body className={inter.className}>
         <nav>
-          <Link href="/about">About</Link>
-          <Link href="/report">Report</Link>
-          <Link href="/todos-csr">Todos-csr</Link>
-          <Link href="/todos-ssr">Todos-ssr</Link>
+          <Link className="mx-4" href="/about">
+            About
+          </Link>
+          <Link href="/report" className="mx-4">
+            Report
+          </Link>
+          <Link href="/todos-csr" className="mx-4">
+            Todos-csr
+          </Link>
+          <Link href="/todos-ssr" className="mx-4">
+            Todos-ssr
+          </Link>
         </nav>
         <QueryProvider>{children}</QueryProvider>
       </body>

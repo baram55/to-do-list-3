@@ -1,3 +1,5 @@
+import { NewTodo, Todo } from "@/types";
+
 export const GET = async () => {
   const response = await fetch("http://localhost:4000/todos", {
     cache: "no-cache",
@@ -12,8 +14,8 @@ export const GET = async () => {
   return todos;
 };
 
-export const POST = async (request: Request) => {
-  const { title, contents } = await request.json();
+export const POST = async (newTodo: NewTodo) => {
+  const { title, contents } = newTodo;
 
   const response = await fetch("http://localhost:4000/todos", {
     method: "POST",
