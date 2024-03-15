@@ -29,12 +29,22 @@ export const POST = async (newTodo: NewTodo) => {
   return Response.json({ todo });
 };
 
-export const DELETE = async (request: Request) => {
-  const id = await request.json();
+export const DELETE = async (id: string) => {
   const response = await fetch(`http://localhost:4000/todos/${id}`, {
     method: "DELETE",
   });
   const todo = await response.json();
 
   return Response.json({ todo });
+};
+
+export const PATCH = async (todo: Todo) => {
+  const id = todo.id;
+  const response = await fetch(`http://localhost:4000/todos/${id}`, {
+    method: "POST",
+    body: JSON.stringify({ ...todo, isDone: !todo.isDone }),
+  });
+  const tempTodo = await response.json();
+
+  return Response.json({ tempTodo });
 };
